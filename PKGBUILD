@@ -2,7 +2,7 @@
 # Contributor: Jason Plum <jplum@archlinuxarm.org>
 # Contributor: Kevin Mihelich <kevin@archlinuxarm.org>
 
-_subarchs=(armv5 armv6h armv7h armv8)
+_subarchs=(armv5)
 _pkgrel_upstream=1
 pkgbase='distccd-alarm'
 pkgname=("${_subarchs[@]/#/$pkgbase-}")
@@ -19,16 +19,10 @@ options=('libtool' 'emptydirs' '!strip')
 _URL="https://archlinuxarm.org/builder/xtools"
 source=(
 "x-tools-$_date.tar.xz::$_URL/x-tools.tar.xz"
-"x-tools6h-$_date.tar.xz::$_URL/x-tools6h.tar.xz"
-"x-tools7h-$_date.tar.xz::$_URL/x-tools7h.tar.xz"
-"x-tools8-$_date.tar.xz::$_URL/x-tools8.tar.xz"
 'config.in' 'service.in' 'readme.in'
 )
 #PKGEXT='.pkg.tar'
 md5sums=('4a53a800a10241734ba1abdda981a35d'
-         'a6ae48eafce2894739277b3fa2be714d'
-         '397c46ec3f34512f553fa45e92459509'
-         '16e951eef3612244e8b1438e2fc9b69e'
          '6250a214faeda10c822899f39635e71e'
          '7e664f8ce386f467f1a7381c9ac3c06f'
          'da6ee5bb971d28b85e49d456a3889349')
@@ -40,7 +34,7 @@ build() {
   'arm-unknown-linux-gnueabihf' 'aarch64-unknown-linux-gnueabi')
   _port=('3633' '3634' '3635' '3636')
 
-  for i in 0 1 2 3; do
+  for i in 0; do
     # make service units
     sed "s/@VERS@/${_subarchs[$i]}/" <service.in >"distccd-${_subarchs[$i]}.service"
 
