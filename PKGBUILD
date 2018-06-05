@@ -46,9 +46,9 @@ build() {
       <config.in >"distccd-${_subarchs[$i]}.conf"
 
     # make readme.install
-    sed -e "s/@VERS@/${_subarchs[$i]}/g" \
-      -e "s/@PORT@/${_port[$i]}/g" \
-      <readme.in >../"${_subarchs[$i]}".install
+##    sed -e "s/@VERS@/${_subarchs[$i]}/g" \
+##      -e "s/@PORT@/${_port[$i]}/g" \
+##      <readme.in >../"${_subarchs[$i]}".install
   done
 }
 
@@ -56,7 +56,7 @@ _package_subarch() {
   # backup configs
   backup=("etc/conf.d/distccd-$1")
   pkgdesc="A toolchain for Arch ARM $1 builds via distcc"
-  install="$1.install"
+##  install="$1.install"
 
   # install symlink to distccd
   install -d "${pkgdir}/usr/bin"
