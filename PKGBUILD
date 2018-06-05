@@ -78,7 +78,7 @@ _package_subarch() {
 }
 
 for i in "${!_subarchs[@]}"; do
-  _bins=('arm-unknown-linux-gnueabi' 'armv6l-unknown-linux-gnueabihf'
+  _bins=('armv5tel-unknown-linux-gnueabi' 'armv6l-unknown-linux-gnueabihf'
   'armv7l-unknown-linux-gnueabihf' 'aarch64-unknown-linux-gnu')
   _xtoolsdir="${source[i]##*/}"
   _xtoolsdir="${_xtoolsdir%%.*}"
