@@ -6,9 +6,10 @@ _subarchs=(armv5)
 _pkgrel_upstream=1
 pkgbase='distccd-alarm'
 pkgname=("${_subarchs[@]/#/$pkgbase-}")
-_date=20180511
-pkgver=8.1.0
-pkgrel=1
+_date=20180817
+# inspect source tarball under $name/share/gcc-x.y.z
+pkgver=8.2.0
+pkgrel=3
 arch=('x86_64')
 license=('GPL' )
 pkgdesc="Toolchain for Arch ARM builds via distcc on x86_64 slaves"
@@ -22,7 +23,7 @@ source=(
 'config.in' 'service.in' 'readme.in'
 )
 #PKGEXT='.pkg.tar'
-md5sums=('4a53a800a10241734ba1abdda981a35d'
+md5sums=('b476361f92283cab69c1c66fc9c9b390'
          '6250a214faeda10c822899f39635e71e'
          '7e664f8ce386f467f1a7381c9ac3c06f'
          'da6ee5bb971d28b85e49d456a3889349')
